@@ -1,6 +1,6 @@
 package com.valentin.beer.Service;
 
-import com.valentin.beer.Bean.BeerBeen;
+import com.valentin.beer.Bean.BeerBean;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -8,5 +8,5 @@ import java.util.List;
 @Service
 public interface BeerService {
 
-    public List<BeerBeen> getAllBeer();
+    public List<BeerBean> getAllBeer();
 }
