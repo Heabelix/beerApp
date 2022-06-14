@@ -27,4 +27,7 @@ public class BeerBeen {
 
     @Column(name = "color_name")
     String color;
+
+    @Column(name = "name_brasserie")
+    String brasserieName;
 }
