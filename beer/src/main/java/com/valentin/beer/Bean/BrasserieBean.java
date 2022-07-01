@@ -5,15 +5,15 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Collection;
 
 @Entity
 @Getter
 @Setter
 @FieldDefaults(level = AccessLevel.PROTECTED)
+@Table(name = "brasserie")
 public class BrasserieBean {
 
     @Id
@@ -23,4 +23,8 @@ public class BrasserieBean {
 
     @Column(name = "name_brasserie")
     String brasserieName;
+
+//    @OneToMany
+//    @JoinColumn(name = "id_brasserie")
+//    Collection<BeerBean> beerBeans;
 }

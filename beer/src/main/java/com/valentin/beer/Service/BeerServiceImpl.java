@@ -13,10 +13,10 @@ public class BeerServiceImpl implements BeerService {
     BeerRepository beerRepository;
 
     public List<BeerBean> getAllBeer() {
-        return beerRepository.getAllBeer();
+        return beerRepository.findAll();
     }
 
-    public void addBeer(BeerBean beerBean) {
-        beerRepository.save(beerBean);
+    public List<BeerBean> getBeerByColor(String color) {
+        return beerRepository.findBeerBeanByColor_ColorName(color);
     }
 }

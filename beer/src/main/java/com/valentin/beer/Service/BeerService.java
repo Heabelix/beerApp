@@ -9,4 +9,6 @@ import java.util.List;
 public interface BeerService {
 
     public List<BeerBean> getAllBeer();
+
+    List<BeerBean> getBeerByColor(String color);
 }

@@ -6,15 +6,13 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 @Getter
 @Setter
 @FieldDefaults(level = AccessLevel.PROTECTED)
+@Table(name = "beer")
 public class BeerBean {
 
     @Id
@@ -25,9 +23,13 @@ public class BeerBean {
 
     String name;
 
-    @Column(name = "color_name")
-    String color;
 
-    @Column(name = "name_brasserie")
-    String brasserieName;
+    @OneToOne
+    @JoinColumn(name = "color_id")
+    ColorBean color;
+
+
+    @ManyToOne
+    @JoinColumn(name = "id_brasserie")
+    BrasserieBean brasserieName;
 }

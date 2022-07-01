@@ -5,15 +5,14 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 @Setter
 @Getter
 @FieldDefaults(level = AccessLevel.PROTECTED)
+@Embeddable
+@Table(name = "color")
 public class ColorBean {
 
     @Id

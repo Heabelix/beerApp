@@ -19,8 +19,8 @@ public class BeerController {
         return beerService.getAllBeer();
     }
 
-    @PostMapping(path = "/add")
-    public void addBeer(@RequestParam BeerBean beerBean) {
-         beerService.addBeer(beerBean);
+    @GetMapping(path = "/color/{color}")
+    public List<BeerBean> getBeerByColor(@PathVariable final String color) {
+        return beerService.getBeerByColor(color);
     }
 }
