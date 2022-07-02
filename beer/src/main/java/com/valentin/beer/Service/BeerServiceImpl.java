@@ -19,4 +19,12 @@ public class BeerServiceImpl implements BeerService {
     public List<BeerBean> getBeerByColor(String color) {
         return beerRepository.findBeerBeanByColor_ColorName(color);
     }
+
+    public List<BeerBean> getBeerByBrasserie(String brasserie) {
+        return beerRepository.findBeerBeansByBrasserieName_BrasserieName(brasserie);
+    }
+
+    public BeerBean addBeer(final BeerBean beer) {
+        return beerRepository.save(beer);
+    }
 }

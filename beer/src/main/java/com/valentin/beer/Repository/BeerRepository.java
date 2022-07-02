@@ -14,4 +14,7 @@ public interface BeerRepository extends CrudRepository<BeerBean, Integer> {
     List<BeerBean> findAll();
 
     List<BeerBean> findBeerBeanByColor_ColorName(String color);
+
+    List<BeerBean> findBeerBeansByBrasserieName_BrasserieName(String brasserie);
+
 }

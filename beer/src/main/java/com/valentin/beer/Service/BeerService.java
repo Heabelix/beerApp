@@ -11,4 +11,8 @@ public interface BeerService {
     public List<BeerBean> getAllBeer();
 
     List<BeerBean> getBeerByColor(String color);
+
+    List<BeerBean> getBeerByBrasserie(String brasserie);
+
+    BeerBean addBeer(final BeerBean beer);
 }
