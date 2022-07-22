@@ -1,6 +1,5 @@
 package com.valentin.beer.Bean;
 
-
 import com.fasterxml.jackson.annotation.*;
 import com.valentin.beer.json.JsonViewPub;
 import lombok.AccessLevel;
@@ -10,7 +9,6 @@ import lombok.experimental.FieldDefaults;
 
 import javax.persistence.*;
 import java.util.List;
-
 @JsonIdentityInfo(
         generator = ObjectIdGenerators.PropertyGenerator.class,
         property = "id")
@@ -18,28 +16,22 @@ import java.util.List;
 @Getter
 @Setter
 @FieldDefaults(level = AccessLevel.PROTECTED)
-@Table(name = "beer")
-public class BeerBean {
+@Table(name = "pub")
+public class PubBean {
 
     @Id
-    @Column(name = "id_beer")
-    @GeneratedValue
+    @Column(name = "id_pub")
     Integer id;
 
-
+    @Column(name = "pub_name")
     String name;
 
-
-    @OneToOne
-    @JoinColumn(name = "color_id")
-    ColorBean color;
+    @Column
+    String ville;
 
 
-    @ManyToOne
-    @JoinColumn(name = "id_brasserie")
-    BrasserieBean brasserieName;
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "beer_pub", joinColumns = @JoinColumn(name = "pub_id"), inverseJoinColumns =  @JoinColumn(name = "beer_id"))
+    List<BeerBean> beersInPub;
 
-
-    @ManyToMany(mappedBy = "beersInPub",fetch = FetchType.LAZY)
-    List<PubBean> pubWithBeer;
 }
