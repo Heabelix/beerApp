@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(path = "/color")
+@CrossOrigin(origins = "http://localhost:4040", allowedHeaders = "*")
 public class ColorController {
 
     @Autowired

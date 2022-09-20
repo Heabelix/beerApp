@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4040", allowedHeaders = "*")
 @RequestMapping(path = "/beer")
 public class BeerController {
 

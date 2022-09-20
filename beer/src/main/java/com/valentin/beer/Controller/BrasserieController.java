@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(path = "/brasserie")
+@CrossOrigin(origins = "http://localhost:4040", allowedHeaders = "*")
 public class BrasserieController {
 
     @Autowired
