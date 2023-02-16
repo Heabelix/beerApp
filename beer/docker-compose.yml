@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+
+  beer-database:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: yokosonic
+      MYSQL_DATABASE: BEER
+    ports:
+      - "3308:3306"
